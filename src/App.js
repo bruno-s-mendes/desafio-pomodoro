@@ -20,7 +20,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Clock countDownTime = {25} />
+      <Clock countDownTime = {10} breakTime={2} />
     </div>
   );
 }
