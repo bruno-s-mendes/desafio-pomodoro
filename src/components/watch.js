@@ -40,9 +40,9 @@ function Clock({ countDownTime, breakTime }) {
   },[time, isBreak, pause, breakTime]);
 
   const restart = () => {
+    setPause(true);
     setTime(countDownTime);
     setIsBreak(false);
-    setPause(true);
   }
 
   return (
