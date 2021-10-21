@@ -5,6 +5,7 @@ import finished from '../resources/finished.mp3'
 
 function Clock({ countDownTime, breakTime }) {
   const [time, setTime] = useState(countDownTime);
+  const [bTime, setBTime] = useState(breakTime);
   const [isBreak, setIsBreak] = useState(false)
   const [pause, setPause] = useState(true)
   const [showTime, setShowTime] = useState();
@@ -30,7 +31,7 @@ function Clock({ countDownTime, breakTime }) {
     }, 1000);
     const audio = new Audio(finished);
     if (time === 0 && !isBreak) {
-        setTime(breakTime);
+        setTime(bTime);
         setIsBreak(!isBreak);
         audio.play();
         return clearTimeout(timer);
@@ -41,21 +42,35 @@ function Clock({ countDownTime, breakTime }) {
     if (pause === true) {
       return clearTimeout(timer);
     }
-  },[time, isBreak, pause, breakTime]);
+  },[time, isBreak, pause, bTime]);
 
   const restart = () => {
     setPause(true);
+    setTime(25);
+    setBTime(5)
+    setIsBreak(false);
+  }
+
+  const set = () => {
+    setPause(true);
     setTime(countDownTime);
+    setBTime(breakTime)
     setIsBreak(false);
   }
 
   return (
     <div>
-          <button
+    <button
+      type="button"
+      onClick={ () => set() }
+      >
+      <h4>Set</h4>
+    </button>
+    <button
       type="button"
       onClick={ () => restart() }
     >
-      <h4>Set/Reset</h4>
+      <h4>Reset</h4>
     </button>
     <button
       type="button"
