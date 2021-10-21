@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-
+import '../style/watch.css';
 import finished from '../resources/finished.mp3'
 
 function Clock({ countDownTime, breakTime }) {
   const [time, setTime] = useState(countDownTime);
   const [bTime, setBTime] = useState(breakTime);
-  const [isBreak, setIsBreak] = useState(false)
-  const [pause, setPause] = useState(true)
+  const [isBreak, setIsBreak] = useState(false);
+  const [breakClass, setBreackClass] = useState('regular');
+  const [timerPhrase, setTimerPhrase] = useState('Task remaining time')
+  const [pause, setPause] = useState(true);
   const [showTime, setShowTime] = useState();
 
   const setTimetoDate = (value) => {
@@ -17,9 +19,16 @@ function Clock({ countDownTime, breakTime }) {
     setShowTime(seconds);
   }
 
-  // const stopRoutine = () => {
+  useEffect(() => {
+    if(isBreak){
+      setTimerPhrase('Break remaining time')
+      return setBreackClass('break');
 
-  // }
+    } else {
+      setTimerPhrase('Task remaining time')
+      return setBreackClass('regular');
+    }
+  }, [breakClass, isBreak])
 
   useEffect(() => {
     return setTimetoDate(time);
@@ -59,29 +68,35 @@ function Clock({ countDownTime, breakTime }) {
   }
 
   return (
-    <div>
+    <div className='clock'>
+      <div className='top-btn-container'>
+        <button
+          className='top-btn'
+          type="button"
+          onClick={ () => set() }
+          >
+        Set
+        </button>
+        <button
+          className='top-btn'
+          type="button"
+          onClick={ () => restart() }
+        >
+        Reset
+        </button>
+      </div>
     <button
+      className={`timeDisplay ${breakClass}`}
       type="button"
-      onClick={ () => set() }
-      >
-      <h4>Set</h4>
-    </button>
-    <button
-      type="button"
-      onClick={ () => restart() }
     >
-      <h4>Reset</h4>
+    { `${timerPhrase} ${showTime} seconds`}
     </button>
     <button
-      type="button"
-    >
-      <h4>{ showTime }</h4>
-    </button>
-    <button
+      id='startPauseBTN'
       type="button"
       onClick={ () => setPause(!pause) }
     >
-      <h4>Start/Pause</h4>
+    Start/Pause
     </button>
     </div>
   );

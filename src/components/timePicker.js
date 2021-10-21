@@ -1,12 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import '../style/timePicker.css';
 
 function TimePicker({taskTime, setTaskTime, breakTime, setBreakTime}) {
-  // const [taskTime, setTaskTime] = useState(25);
-  // const [breakTime, setBreakTime] = useState(5)
-
   return (
-    <form>
+    <form className='timePicker'>
       <label htmlFor="tTime">Task time(seconds):</label>
       <input
         type="number"
