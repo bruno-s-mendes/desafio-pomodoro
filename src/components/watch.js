@@ -55,7 +55,7 @@ function Clock({ countDownTime, breakTime }) {
       type="button"
       onClick={ () => restart() }
     >
-      <h4>Zerar</h4>
+      <h4>Set/Reset</h4>
     </button>
     <button
       type="button"
