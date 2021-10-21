@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import finished from '../resources/finished.mp3'
+
 function Clock({ countDownTime, breakTime }) {
   const [time, setTime] = useState(countDownTime);
   const [isBreak, setIsBreak] = useState(false)
@@ -26,9 +28,11 @@ function Clock({ countDownTime, breakTime }) {
     const timer = setTimeout(() => {
       setTime(time -1);
     }, 1000);
+    const audio = new Audio(finished);
     if (time === 0 && !isBreak) {
         setTime(breakTime);
         setIsBreak(!isBreak);
+        audio.play();
         return clearTimeout(timer);
     }
     if (time === 0 && isBreak) {

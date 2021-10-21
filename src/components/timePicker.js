@@ -7,7 +7,7 @@ function TimePicker({taskTime, setTaskTime, breakTime, setBreakTime}) {
 
   return (
     <form>
-      <label for="tTime">Task time(seconds):</label>
+      <label htmlFor="tTime">Task time(seconds):</label>
       <input
         type="number"
         id="tTime"
@@ -15,7 +15,7 @@ function TimePicker({taskTime, setTaskTime, breakTime, setBreakTime}) {
         value={taskTime}
         onChange={(event) => setTaskTime(event.target.value)}
       />
-      <label for="bTime">Break time(seconds):</label>
+      <label htmlFor="bTime">Break time(seconds):</label>
       <input
         type="number"
         id="bTime"
