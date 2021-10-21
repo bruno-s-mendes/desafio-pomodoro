@@ -7,12 +7,16 @@ function Clock({ countDownTime, breakTime }) {
   const [pause, setPause] = useState(true)
   const [showTime, setShowTime] = useState();
 
-  const setTimetoDate = (value) =>{
+  const setTimetoDate = (value) => {
     const date = new Date();
     date.setSeconds(value);
     const seconds = date.getSeconds();
     setShowTime(seconds);
   }
+
+  // const stopRoutine = () => {
+
+  // }
 
   useEffect(() => {
     return setTimetoDate(time);
@@ -35,8 +39,20 @@ function Clock({ countDownTime, breakTime }) {
     }
   },[time, isBreak, pause, breakTime]);
 
+  const restart = () => {
+    setTime(countDownTime);
+    setIsBreak(false);
+    setPause(true);
+  }
+
   return (
     <div>
+          <button
+      type="button"
+      onClick={ () => restart() }
+    >
+      <h4>Zerar</h4>
+    </button>
     <button
       type="button"
     >
