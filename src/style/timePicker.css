@@ -1,4 +1,6 @@
 .timePicker {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 20px;
   margin: 50px 0 5px 5px;
   width: 600px;
@@ -6,6 +8,20 @@
 
 input {
   font-size: 20px;
+  margin: 5px;
   text-align: center;
   width: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+  .timePicker {
+    width: 100%;
+  }
+
+  input {
+    font-size: 15px;
+    text-align: center;
+    width: 50px;
+  }
+
 }

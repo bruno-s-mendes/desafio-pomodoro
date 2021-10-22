@@ -7,6 +7,12 @@
   width: 600px;
 }
 
+@media only screen and (max-width: 600px) {
+  .clock {
+    width: 100%;
+  }
+}
+
 .top-btn-container {
   display: flex;
   justify-content: center;
