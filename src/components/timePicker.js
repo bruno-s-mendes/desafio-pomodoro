@@ -6,6 +6,7 @@ function TimePicker({taskTime, setTaskTime, breakTime, setBreakTime}) {
     <form className='timePicker'>
       <label htmlFor="tTime">Task time(seconds):</label>
       <input
+        data-testid='taskTime'
         type="number"
         id="tTime"
         name="tTime"
@@ -14,6 +15,7 @@ function TimePicker({taskTime, setTaskTime, breakTime, setBreakTime}) {
       />
       <label htmlFor="bTime">Break time(seconds):</label>
       <input
+        data-testid='breakTime'
         type="number"
         id="bTime"
         name="bTime"
