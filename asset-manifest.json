@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/desafio-pomodoro/static/css/main.2c5ef7cd.chunk.css",
+    "main.js": "/desafio-pomodoro/static/js/main.704eadd0.chunk.js",
+    "main.js.map": "/desafio-pomodoro/static/js/main.704eadd0.chunk.js.map",
+    "runtime-main.js": "/desafio-pomodoro/static/js/runtime-main.64f79942.js",
+    "runtime-main.js.map": "/desafio-pomodoro/static/js/runtime-main.64f79942.js.map",
+    "static/js/2.5c968dbc.chunk.js": "/desafio-pomodoro/static/js/2.5c968dbc.chunk.js",
+    "static/js/2.5c968dbc.chunk.js.map": "/desafio-pomodoro/static/js/2.5c968dbc.chunk.js.map",
+    "static/js/3.e662a6ad.chunk.js": "/desafio-pomodoro/static/js/3.e662a6ad.chunk.js",
+    "static/js/3.e662a6ad.chunk.js.map": "/desafio-pomodoro/static/js/3.e662a6ad.chunk.js.map",
+    "index.html": "/desafio-pomodoro/index.html",
+    "static/css/main.2c5ef7cd.chunk.css.map": "/desafio-pomodoro/static/css/main.2c5ef7cd.chunk.css.map",
+    "static/js/2.5c968dbc.chunk.js.LICENSE.txt": "/desafio-pomodoro/static/js/2.5c968dbc.chunk.js.LICENSE.txt",
+    "static/media/finished.5e3a6a2e.mp3": "/desafio-pomodoro/static/media/finished.5e3a6a2e.mp3",
+    "static/media/App.css": "/desafio-pomodoro/static/media/tomatoBackground.190884e8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.64f79942.js",
+    "static/js/2.5c968dbc.chunk.js",
+    "static/css/main.2c5ef7cd.chunk.css",
+    "static/js/main.704eadd0.chunk.js"
+  ]
+}
